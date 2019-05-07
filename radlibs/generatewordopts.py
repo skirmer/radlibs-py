@@ -2,7 +2,7 @@
 """
 
 
-def _generateWordOptions():
+def _generate_word_options():
     worddict = {}
 
     noun = {

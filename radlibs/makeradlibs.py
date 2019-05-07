@@ -6,13 +6,13 @@ import feather
 import random
 import re
 import os
-from radlibs.generatewordopts import _generateWordOptions
-from radlibs.postagger import posTagger
+from radlibs.generatewordopts import _generate_word_options
+from radlibs.postagger import pos_tagger
 
 
-def makeRadlibs(phrase, wordset="NA"):
+def make_radlibs(phrase, wordset="NA"):
 
-    word_types = _generateWordOptions()
+    word_types = _generate_word_options()
 
     if wordset == "NA":
         this_dir, this_filename = os.path.split(__file__)
@@ -20,7 +20,7 @@ def makeRadlibs(phrase, wordset="NA"):
         wordset = feather.read_dataframe(DATA_PATH)
         wordset = wordset[wordset["mean"] > 1.2]
 
-        wordset = posTagger(wordset)
+        wordset = pos_tagger(wordset)
         wordset["pos"] = wordset["pos"].str.lower()
 
         this_dir, this_filename = os.path.split(__file__)
@@ -32,7 +32,6 @@ def makeRadlibs(phrase, wordset="NA"):
         wordset = pd.concat([wordset, propernouns], sort=False)
 
     for key in word_types:
-        # wordtype = word_types[key]['wordtype']
         regex = re.compile(word_types[key]["regex"])
         descriptors = word_types[key]["descriptors"]
 
@@ -54,7 +53,7 @@ def makeRadlibs(phrase, wordset="NA"):
             for word in sample:
                 new_phrase = re.sub(
                     regex, word, new_phrase, count=1
-                )  # new_phrase.replace(regex, word, 1)
+                )
         else:
             next
 

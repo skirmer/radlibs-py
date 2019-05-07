@@ -4,7 +4,7 @@
 Welcome! This is a small, fun package. Remember MadLibs from childhood roadtrips? This is something of 
 a parody of that, updated a bit. [There is also an R version of this package: https://skirmer.github.io/radlibs/.](https://skirmer.github.io/radlibs/)
 
-To get started immediately, you can use the base function: `radlibs.makeRadlibs()`. Just pass a string that
+To get started immediately, you can use the base function: `radlibs.make_radlibs()`. Just pass a string that
 includes any number of the following words, and it will fill in something (hopefully) funny!
 
 * noun
@@ -24,7 +24,7 @@ The contents of both columns need to be all lowercase.
 ## I need parts of speech help
 
 If you don't know the parts of speech for a dataset you want to use, I am also including a 
-function that can assign these for you. While it is not hugely comprehensive, `radlibs.posTagger()` will match your dataset to slightly more than 250,000 words already tagged with part of speech. 
+function that can assign these for you. While it is not hugely comprehensive, `radlibs.pos_tagger()` will match your dataset to slightly more than 250,000 words already tagged with part of speech. 
 
 Happy RadLibbing!
 
