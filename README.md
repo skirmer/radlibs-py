@@ -37,7 +37,7 @@ cd radlibs-py
 pip install .
 ``` 
 
-from the command line inside the `radlibs-py` folder. You could also run `make install` if you like.
+from the command line. You could also run `make install` if you like.
 
 ## Credits
 
