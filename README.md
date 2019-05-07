@@ -28,6 +28,17 @@ function that can assign these for you. While it is not hugely comprehensive, `r
 
 Happy RadLibbing!
 
+```
+>>> radlibs.make_radlibs("Playing RadLibs is like verbing with nouns! Interjection!")
+'Playing radlibs is like tethering with jams! oink!'
+```
+
+```
+>>> radlibs.make_radlibs("Python package for verbing nouns via adjective nouns of their nouns")
+'Python package for stoppering rafts via plane tins of their eggplants'
+```
+
+
 ## Installation
 
 This package is not currently available on PyPi, I'm working on it. To install from source, clone this repo, then type 
