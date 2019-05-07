@@ -3,7 +3,8 @@
 
 import pandas as pd
 import feather
-import os 
+import os
+
 
 def posTagger(wordDF):
 
@@ -11,6 +12,6 @@ def posTagger(wordDF):
     DATA_PATH = os.path.join(this_dir, "data", "pos_lexicon.feather")
     wordset = feather.read_dataframe(DATA_PATH)
 
-    tagged_wordDF = pd.merge(wordset, wordDF, on='word', how = 'inner')
+    tagged_wordDF = pd.merge(wordset, wordDF, on="word", how="inner")
 
-    return(tagged_wordDF)
+    return tagged_wordDF
