@@ -28,6 +28,17 @@ function that can assign these for you. While it is not hugely comprehensive, `r
 
 Happy RadLibbing!
 
+## Installation
+
+This package is not currently available on PyPi, I'm working on it. To install from source, clone this repo, then type 
+
+```
+cd radlibs-py
+pip install .
+``` 
+
+from the command line inside the `radlibs-py` folder. You could also run `make install` if you like.
+
 ## Credits
 
 My thanks to https://github.com/tomasengelthaler/HumorNorms for the default dataset of words with 
