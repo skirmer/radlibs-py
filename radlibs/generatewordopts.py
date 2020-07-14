@@ -1,3 +1,8 @@
+
+repeat_word_types = ("repeatnoun", "repeatverb", "repeatplural", "repeatverb", "repeatadjective", "repeatinterjection", "repeatplace", "repeatcelebrity")
+
+
+
 """Function for creating reference of parts of speech
 """
 
