@@ -4,7 +4,7 @@
 from setuptools import setup
 
 setup(name = 'radlibs',
-    version = '0.1.0',
+    version = '0.2.0',
     description = 'Build Your Own Madlibs!',
     author = 'Stephanie Kirmer',
     author_email = 'stephanie@stephaniekirmer.com',
