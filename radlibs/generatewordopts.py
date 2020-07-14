@@ -8,19 +8,34 @@ def _generate_word_options():
     noun = {
         "descriptors": ["noun", "noun phrase"],
         "wordtype": "noun",
-        "regex": "[nN]oun",
+        "regex": "\{[nN]oun\}",
     }
+
+    repeatnoun = {
+        "descriptors": ["noun", "noun phrase"],
+        "wordtype": "noun",
+        "regex": "\{[nN]oun\d\}",
+    }
+
     adverb = {"descriptors": ["adverb"], "wordtype": "adverb", "regex": "[aA]dverb"}
     plural = {"descriptors": ["plural"], "wordtype": "plural", "regex": "[pP]lural"}
+
     verb = {
         "descriptors": ["verb (transitive)", "verb"],
         "wordtype": "verb",
-        "regex": "[vV]erb",
+        "regex": "\{[vV]erb\}",
     }
+
+    repeatverb = {
+        "descriptors": ["verb (transitive)", "verb"],
+        "wordtype": "verb",
+        "regex": "\{[vV]erb\d\}",
+    }
+
     adjective = {
         "descriptors": ["adjective"],
         "wordtype": "adjective",
-        "regex": "[aA]djective",
+        "regex": "[aA]djective", 
     }
     interjection = {
         "descriptors": ["interjection"],
@@ -40,9 +55,11 @@ def _generate_word_options():
 
     worddict = {
         "noun": noun,
+        "repeatnoun": repeatnoun,
         "adverb": adverb,
         "plural": plural,
         "verb": verb,
+        "repeatverb": repeatverb,
         "adjective": adjective,
         "interjection": interjection,
         "place": place,

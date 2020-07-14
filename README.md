@@ -5,7 +5,7 @@ Welcome! This is a small, fun package. Remember MadLibs from childhood roadtrips
 a parody of that, updated a bit. [There is also an R version of this package: https://skirmer.github.io/radlibs/.](https://skirmer.github.io/radlibs/)
 
 To get started immediately, you can use the base function: `radlibs.make_radlibs()`. Just pass a string that
-includes any number of the following words, and it will fill in something (hopefully) funny!
+includes any number of the following words, enclosed in curly braces, and it will fill in something (hopefully) funny!
 
 * noun
 * plural
@@ -21,6 +21,16 @@ own use case, using your own sample of words (joke for family, for example), you
 pandas dataframe containing, at minimum, a `word` column and a `pos` column indicating its part of speech.
 The contents of both columns need to be all lowercase.
 
+## Advanced usage
+
+If you'd like to repeat one of the generated funny words, then you'll just need to include a numeral at the end of the word you want to replace. For example:
+
+```
+>>> radlibs.make_radlibs("I {verb1} the {noun} but then a {noun} {verb1}s me!")
+'I paste the mayor but then a cat pastes me!'
+```
+
+
 ## I need parts of speech help
 
 If you don't know the parts of speech for a dataset you want to use, I am also including a
@@ -29,12 +39,12 @@ function that can assign these for you. While it is not hugely comprehensive, `r
 Happy RadLibbing!
 
 ```
->>> radlibs.make_radlibs("Playing RadLibs is like verbing with nouns! Interjection!")
+>>> radlibs.make_radlibs("Playing RadLibs is like {verb}ing with {noun}s! Interjection!")
 'Playing radlibs is like tethering with jams! oink!'
 ```
 
 ```
->>> radlibs.make_radlibs("Python package for verbing nouns via adjective nouns of their nouns")
+>>> radlibs.make_radlibs("Python package for {verb}ing {noun}s via {adjective} {noun}s of their {noun}s")
 'Python package for stoppering rafts via plane tins of their eggplants'
 ```
 

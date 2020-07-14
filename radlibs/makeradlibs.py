@@ -34,22 +34,31 @@ def make_radlibs(phrase, wordset="NA"):
     for key in word_types:
         regex = re.compile(word_types[key]["regex"])
         descriptors = word_types[key]["descriptors"]
-
         word_types[key]["count"] = len(regex.findall(phrase))
-
         word_types[key]["sample"] = random.sample(
             list(wordset[wordset["pos"].isin(descriptors)]["word"]),
             word_types[key]["count"],
         )
-
+        if key in ("repeatnoun", "repeatverb"):
+            word_types[key]["valueset"] = regex.findall(phrase)
+            
     new_phrase = phrase
 
     for key in word_types:
         count = word_types[key]["count"]
         sample = word_types[key]["sample"]
         regex = re.compile(word_types[key]["regex"])
-
-        if count > 0:
+        if key in ("repeatnoun", "repeatverb"):
+            valueset = list(set(word_types[key]["valueset"]))
+            valuecount = len(valueset)
+            valuesub = word_types[key]["sample"][0:valuecount]
+            res = {valueset[i]: valuesub[i] for i in range(valuecount)}
+            for key in res:
+                repetitions = phrase.count(key)
+                new_phrase = re.sub(
+                    key, res[key], new_phrase, count=repetitions
+                )
+        elif count > 0:
             for word in sample:
                 new_phrase = re.sub(
                     regex, word, new_phrase, count=1
