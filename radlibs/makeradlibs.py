@@ -39,8 +39,7 @@ def make_radlibs(phrase, wordset="NA"):
             list(wordset[wordset["pos"].isin(descriptors)]["word"]),
             word_types[key]["count"],
         )
-        if key in ("repeatnoun", "repeatverb"):
-            word_types[key]["valueset"] = regex.findall(phrase)
+        word_types[key]["valueset"] = regex.findall(phrase)
             
     new_phrase = phrase
 
@@ -48,7 +47,8 @@ def make_radlibs(phrase, wordset="NA"):
         count = word_types[key]["count"]
         sample = word_types[key]["sample"]
         regex = re.compile(word_types[key]["regex"])
-        if key in ("repeatnoun", "repeatverb"):
+        
+        if key in ("repeatnoun", "repeatverb", "repeatplural", "repeatverb", "repeatadjective", "repeatinterjection", "repeatplace", "repeatcelebrity"):
             valueset = list(set(word_types[key]["valueset"]))
             valuecount = len(valueset)
             valuesub = word_types[key]["sample"][0:valuecount]
