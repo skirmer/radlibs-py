@@ -6,7 +6,7 @@ import feather
 import random
 import re
 import os
-from radlibs.generatewordopts import _generate_word_options, repeat_word_types
+from radlibs.generatewordopts import _generate_word_options
 from radlibs.postagger import pos_tagger
 
 
@@ -48,7 +48,7 @@ def make_radlibs(phrase, wordset="NA"):
         sample = word_types[key]["sample"]
         regex = re.compile(word_types[key]["regex"])
 
-        if key in repeat_word_types:
+        if key.startswith("repeat"):
             valueset = list(set(word_types[key]["valueset"]))
             valuecount = len(valueset)
             valuesub = word_types[key]["sample"][0:valuecount]
