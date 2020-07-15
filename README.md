@@ -1,5 +1,8 @@
 # Radlibs for Python
 
+## This repo is archived, all of Radlibs now resides at https://github.com/skirmer/radlibs. Head over there for all the radlibs for python fun!!
+
+
 
 Welcome! This is a small, fun package. Remember MadLibs from childhood roadtrips? This is something of
 a parody of that, updated a bit. [There is also an R version of this package: https://skirmer.github.io/radlibs/.](https://skirmer.github.io/radlibs/)
